@@ -14,6 +14,15 @@
     <script src="./libs/jquery-1.12.4.min.js"></script>
     <!-- 模板引擎 -->
     <script src="./libs/template-web.js"></script>
+     <!-- 日期插件 -->
+     <link rel="stylesheet" href="./libs/jedate/css/jeDate-test.css">
+     <link rel="stylesheet" href="./libs/jedate/css/jedate.css">
+     <script src="./libs/jedate/js/jedate.js"></script>
+     <!-- 富文本插件 -->
+     <script src="./libs/wangEditor.min.js"></script>
+    <script src="./js/article_release.js"></script>
+    <script src="./libs/http.js"></script>
+
 </head>
 
 <body>
@@ -51,11 +60,19 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">发布时间：</label>
                     <div class="col-sm-4">
+                        <!-- 时间日期插件 -->
+                        <div class="jeinpbox">
+                            <input type="text" class="jeinput" id="testico" placeholder="YYYY-MM-DD">
+                            <div class="icons jebtns"
+                                onclick="jeDate('#testico',{trigger:false,format: 'YYYY-MM-DD',zIndex:100000001 })"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">文章内容：</label>
                     <div class="col-sm-10">
+                           <!-- 编辑器插件 -->
+                           <div id="editor"> </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -67,6 +84,12 @@
             </form>
         </div>
     </div>
+    <!-- 文章分类模板 -->
+      <script id ="atr-list" type="text/html">
+        {{each data v}}
+        <option value='{{ v.id }}'>{{ v.name }}</option>
+        {{/each}}
+    </script>
 </body>
 
 </html>

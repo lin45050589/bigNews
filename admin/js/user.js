@@ -44,7 +44,6 @@ $(function () {
 
                 if (backData.code == 200) {
                     alert(backData.msg);
-
                     parent.window.location.reload();
                 } 
             }

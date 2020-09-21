@@ -57,6 +57,7 @@ $(function () {
     * @return: 
     */
     $('#btnSearch').trigger('click');
+    
     function getArticleList(currentPage) {
         $.ajax({
             url: BigNew.article_query,
